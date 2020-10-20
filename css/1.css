@@ -1,0 +1,419 @@
+* {box-sizing: border-box;}
+
+.little img {
+    width: 200px;
+    height: 200px;
+}
+
+.scale img {
+    width: 50px;
+    height: 200px;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
+  background-color: white;
+}
+
+.left {
+    width: 70%;
+    height: 90%;
+    float: left;
+    margin-top: 3%;
+    margin-left: 3%;
+    background-color: ;
+    position: relative;
+}
+
+.right {
+    width: 20%;
+    height: 90%;
+    float: left;
+    margin-top: 3%;
+    margin-left: 4%;
+    background-color: ;
+}
+
+.similarwords {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.similarwords li {
+    list-style: none;
+}
+
+.similarwords li ul{
+    width: 100%;
+    height: 35px;
+    background-color: #f1f1f1;
+    padding: 8.6px 5px 8.6px 5px;
+    margin: 5px 0px 5px 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+.similarwords h2 {
+    font-size: 12px;
+}
+
+.colorimg {
+    width: 100%;
+    background-color: #888888;
+    border: 3px solid black;
+}
+
+.representimg {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+.canvas { display:block; margin:1em auto; background:#fff; border:1px solid #ccc }
+.left img {
+    width: 100%;
+    height: 100%;
+}
+
+form.example input[type=text] {
+  padding: 8.5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+
+
+select {
+  padding: 8.5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.words {
+    padding: 8.5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+.middle h1 {
+    margin: 0;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.middle h2 {
+    margin: 0;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 70px;
+}
+
+.similarwords h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 70px;
+}
+
+.colorimg h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 70px;
+}
+
+.middle h3 {
+    margin: 0;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+}
+
+
+.btn_here {
+    margin-top: 50px;
+}
+
+.btn_here button{
+    padding: 8.5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 100%;
+  background: #888888;
+    color: white;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #333;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+}
+
+#rect1 {
+    width: 20%;
+    height: 40px;
+    background-color: antiquewhite;
+}
+
+.first {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0px;
+}
+
+#rect2 {
+    width: 20%;
+    height: 40px;
+    background-color: darkblue;
+}
+
+#rect3 {
+    width: 20%;
+    height: 40px;
+    background-color: darkcyan;
+}
+
+#rect4 {
+    width: 20%;
+    height: 40px;
+    background-color: azure;
+}
+
+#rect5 {
+    width: 20%;
+    height: 40px;
+    background-color: chartreuse;
+}
+
+#rect6 {
+    width: 20%;
+    height: 40px;
+    background-color: darkblue;
+}
+
+#rect7 {
+    width: 20%;
+    height: 40px;
+    background-color: darkcyan;
+}
+
+#rect8 {
+    width: 20%;
+    height: 40px;
+    background-color: azure;
+}
+
+#rect9 {
+    width: 20%;
+    height: 40px;
+    background-color: chartreuse;
+}
+
+#rect10 {
+    width: 20%;
+    height: 40px;
+    background-color: coral;
+}
+
+#rect11 {
+    width: 20%;
+    height: 40px;
+    background-color: darkblue;
+}
+
+#rect12 {
+    width: 20%;
+    height: 40px;
+    background-color: darkcyan;
+}
+
+#rect13 {
+    width: 20%;
+    height: 40px;
+    background-color: azure;
+}
+
+#rect14 {
+    width: 20%;
+    height: 40px;
+    background-color: chartreuse;
+}
+
+#rect15 {
+    width: 20%;
+    height: 40px;
+    background-color: salmon;
+}
+
+#rect16 {
+    width: 20%;
+    height: 40px;
+    background-color: saddlebrown;
+}
+
+#rect17 {
+    width: 20%;
+    height: 40px;
+    background-color: darkblue;
+}
+
+#rect18 {
+    width: 20%;
+    height: 40px;
+    background-color: darkcyan;
+}
+
+#rect19 {
+    width: 20%;
+    height: 40px;
+    background-color: azure;
+}
+
+#rect20 {
+    width: 20%;
+    height: 40px;
+    background-color: brown;
+}
+
+.second {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0px;
+}
+
+.img1 {
+    width: 50%;
+    background-color: ;
+}
+
+.second img {
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.img2 {
+    width: 50%;
+    background-color: ;
+}
+
+.img3 {
+    width: 50%;
+    background-color: ;
+}
+
+.img4 {
+    width: 50%;
+    background-color: ;
+}
+
+.third {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0px;
+}
+
+.third img {
+    width: 100%;
+    padding: 0px 5px;
+}
+
+.scale {
+    position: absolute;
+    bottom: 8%;
+    right: 3%;
+    z-index: 1;
+    width: 7%;
+    height: 150px;
+    float: right;
+}
+
+
+.little {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    z-index: 1;
+    width: 20%;
+    height: 200px;
+    float: right;
+}
