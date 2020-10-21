@@ -104,6 +104,25 @@
         dataType:"json"
     }).then((data, textStatus, jqXHR) => {
         console.log(data);
+        console.log(typeof data);
+            if(data.length>0)
+            {
+                var tb=$("<table/>");
+                for(var i in data)
+                {
+                    //var $id = i+1;
+                    var $word = data[i][0];
+                    var $ratio = data[i][1];
+
+                    var row = $("<tr />").append(
+                      //  $("<td />").text($id),
+                        $("<td />").text($word),
+                        $("<tr />").text($ratio)
+                    );
+                    tb.append(row);
+                }
+                $(".wrap").append(tb);
+            }
     }, (jqXHR, textStatus, errorThrown) => {
         /*pass*/
     })
