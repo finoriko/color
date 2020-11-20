@@ -14,7 +14,7 @@
 	<body style="background-color: #bababa">
         <div class="left">
         <!--<canvas></canvas>-->
-        <img src="big.png">
+        <svg width="960" height="500"></svg>
         <div class="little">
             <img src="little.png">
         </div>
@@ -33,4 +33,61 @@
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/three-spritetext"></script>
+
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <script>
+       
+
+       $.ajax({
+        url: 'http://127.0.0.1:5000/most_similar_surroundings/',
+        //type: 'GET',
+        data: {'word': "soft"},
+        dataType:"json",
+        success:function(data)
+        {
+            const Graph = ForceGraph3D()
+      (document.getElementById('3d-graph'))
+        .jsonUrl(data)
+        .nodeLabel('word')
+        .nodeAutoColorBy('group')
+        .linkThreeObjectExtend(true)
+        .linkThreeObject(link => {
+          // extend link with text sprite
+          const sprite = new SpriteText(`${link.source} > ${link.target}`);
+          sprite.color = 'lightgrey';
+          sprite.textHeight = 1.5;
+          return sprite;
+        })
+        .linkPositionUpdate((sprite, { start, end }) => {
+          const middlePos = Object.assign(...['x', 'y', 'z'].map(c => ({
+            [c]: start[c] + (end[c] - start[c]) / 2 // calc middle point
+          })));
+
+          // Position sprite
+          Object.assign(sprite.position, middlePos);
+        });
+
+    // Spread nodes a little wider
+    Graph.d3Force('charge').strength(-120);
+            console.log(data.result);
+            console.log(data[0]);
+            console.log(data[1]);
+            console.log(data[2]);
+            for(var i in data)
+            {
+              var $word = data[i][0];
+              var $ratio = data[i][1];
+              
+            }
+            
+           
+        }
+    }).then((data, textStatus, jqXHR) => {
+       
+    }, (jqXHR, textStatus, errorThrown) => {
+        /*pass*/
+    })
+    </script>
 </html>

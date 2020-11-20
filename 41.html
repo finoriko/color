@@ -1,0 +1,159 @@
+<html lang=”en”>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+
+		<title>색체</title>
+
+		<link rel="stylesheet" href="css/1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+    
+	<body style="background-color: #bababa">
+        <div class="left">
+        <!--<canvas></canvas>-->
+        <img src="big.png">
+        <div class="little">
+            <img src="little.png">
+        </div>
+        <div class="scale">
+            <img src="scale.png">
+        </div>
+        </div>
+        <div class="right">
+            <div class="top">
+            <form class="example" action="2.html">
+          <input type="text" placeholder="Search.." name="search" value="soft">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+            </div>
+            
+            <div class="middle">
+            <h1>단어</h1>
+                <div class="words">
+                    soft
+                </div>
+                
+                
+            <h2>표색계</h2>
+                <select id="color">
+                  <option value="ncd">ncd</option>
+                </select>
+
+ 
+            <h2>검색엔진</h2>
+                <select id="engine">
+                  <option value="bing">bing</option>
+                </select>
+                
+
+            <h2>a</h2>
+                <div class="range-wrap">
+                <div class="range-value" id="rangeV"></div>
+                <input type="range" min="0" max="10" value="5" class="slider" id="range" ></div>
+            <h3>b</h3>
+                <div class="range-wrap">
+                <div class="range-value" id="rangeV2"></div>
+                <input type="range" min="0" max="10" value="5" class="slider" id="range2" ></div>
+                <br>
+                <div class="btn_here">
+            <button type="button" id="color">배색 생성</button></div>
+            </div>
+            
+            <div class="bottom">
+            <div class="similarwords">
+            <h3>대표 이미지</h3>
+                <div class="colorimg">
+                   <table class="colors">
+                    <tr>
+                    <td class="chosen_color"></td>
+                    </tr>
+                    </table>
+                    <div class="second">
+                        <div class="img1"><img id="img_ch0" src="photo.jpg"></div>
+                        <div class="img2"><img id="img_ch1" src="photo.jpg"></div>
+                    </div>
+                    <div class="second">
+                        <div class="img1"><img id="img_ch2" src="photo.jpg"></div>
+                        <div class="img2"><img id="img_ch3" src="photo.jpg"></div>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            
+        </div>
+	</body>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script>
+    const
+	range = document.getElementById('range'),
+	rangeV = document.getElementById('rangeV'),
+	setValue = ()=>{
+		const
+			newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
+			newPosition = 10 - (newValue * 0.2);
+		rangeV.innerHTML = `<span>${range.value}</span>`;
+		rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+	};
+document.addEventListener("DOMContentLoaded", setValue);
+range.addEventListener('input', setValue);
+    </script>
+    <script>
+    const
+	range2 = document.getElementById('range2'),
+	rangeV2 = document.getElementById('rangeV2'),
+	setValue2 = ()=>{
+		const
+			newValue2 = Number( (range2.value - range2.min) * 100 / (range2.max - range2.min) ),
+			newPosition2 = 10 - (newValue2 * 0.2);
+		rangeV2.innerHTML = `<span>${range2.value}</span>`;
+		rangeV2.style.left = `calc(${newValue2}% + (${newPosition2}px))`;
+	};
+document.addEventListener("DOMContentLoaded", setValue2);
+range2.addEventListener('input', setValue2);
+    </script>
+    <script>
+    $.ajax({
+        url: 'http://165.132.20.173:5000/found_images/',
+        // type: 'GET',
+        // data: {'word': "soft", 'color': "[255, 255, 255]",'platform': "google"},
+        dataType:"json",
+        success:function(data)
+        {
+            
+            console.log(data);
+            console.log(data.length)
+            console.log(data[0])
+            
+            if(data.length>0)
+            {
+                for(var i in data)
+                {
+                    var jbString = data[i];
+
+                    var jbSplit = jbString.toString().split("/");
+                    
+                    var $img_name = jbSplit[6];
+                    var $img_name_split = $img_name.toString().split(",");                
+                    var $img_url = ($img_name_split[0])
+                    
+                    var $img_platform = jbSplit[3];
+                    var $img_word = jbSplit[4];
+                    var $img_time = jbSplit[5];
+
+                                        
+                    //var $id = i+1;
+                $("#img_ch"+i).attr("src", 'http://165.132.20.173:5000/found_images_db/?word='+$img_word+'&platform='+$img_platform+'&name='+$img_url+'&time='+$img_time);
+
+                }
+            }
+        }
+    }).then((data, textStatus, jqXHR) => {
+
+    }, (jqXHR, textStatus, errorThrown) => {
+        /*pass*/
+    })
+</script>
+</html>
